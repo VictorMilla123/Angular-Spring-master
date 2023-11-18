@@ -1,0 +1,25 @@
+<h2>Lista Categoria</h2>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let categoria of categorias">
+            <td>{{categoria.nombre}}</td>
+            <td>{{categoria.descripcion}}</td>
+            <td *ngIf="categoria.estado==1; else datoInactivo">Activo</td>
+            <ng-template #datoInactivo>
+                Inactivo
+              </ng-template>
+            <td>
+                <button (click)="actualizarCategoria(categoria.id_categoria)" class="btn btn-info">Editar</button>
+                <button (click)="eliminarCategoria(categoria.id_categoria)" class="btn btn-danger" style="margin-left : 10px;">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
