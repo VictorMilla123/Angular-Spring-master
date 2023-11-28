@@ -8,8 +8,8 @@ import { Categoria } from '../modelo/categoria';
 })
 export class CategoriaService {
 
-    // retorna el lstado del backend
-    private baseURL = "http://localhost:8085/api/Categorias";
+    // retorna el listado del backend
+    private baseURL = "http://localhost:8081/api/Categorias";
 
     constructor(private httpClient : HttpClient) { }
   
